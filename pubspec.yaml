@@ -1,0 +1,31 @@
+name: user_test
+description: A new Flutter project.
+
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+version: 1.0.0+1
+
+environment:
+  sdk: '>=2.18.2 <3.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.2
+  carousel_slider: ^4.1.1
+  json_annotation: ^4.7.0
+  dio: ^4.0.6
+  provider: ^6.0.4
+  weather_icons: ^3.0.0
+  favorite_button: ^0.0.3
+  convert: ^3.1.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+  build_runner: ^2.0.0
+  json_serializable: ^6.0.0
+
+
+flutter:
+  uses-material-design: true
