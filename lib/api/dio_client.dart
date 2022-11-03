@@ -3,17 +3,18 @@ import 'package:dio/dio.dart';
 import 'package:user_test/model/user_info_model.dart';
 
 class DioClient {
-  Future<UserData?> getUserData() async {
-    UserData? userDataNew;
-
+  Future<List<UserData>?> getUserData() async {
     try {
-      Response response =
+      final response =
           await Dio().get("https://jsonplaceholder.typicode.com/users");
-      userDataNew = UserData.fromJson(response.data);
+
+      final jsonStr = json.encode(response.data);
+      final model = (json.decode(jsonStr) as List)
+          .map((e) => UserData.fromJson(e))
+          .toList();
+      return model;
     } on DioError catch (e) {
-      print(e.toString().toUpperCase());
       return null;
     }
-    return userDataNew;
   }
 }
